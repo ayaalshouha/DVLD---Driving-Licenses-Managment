@@ -136,6 +136,7 @@ namespace DVLD_Data
             return username;
         }
 
+        //adding user
         public static int Add(stUser User)
         {
             int newID = 0;
