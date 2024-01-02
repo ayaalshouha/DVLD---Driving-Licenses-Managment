@@ -26,8 +26,6 @@ namespace DVLD___Driving_Licenses_Managment.Controls
         private clsAppointment _Appointment; 
         private int _AppointmentID = -1;
 
-        
-
         public clsTestTypes.enTestType TestTypeID { 
 
             get { return _TestTypeID; }
@@ -91,11 +89,12 @@ namespace DVLD___Driving_Licenses_Managment.Controls
             else
             {
                 lblRetakeTestID.Text = appointment.RetakeTestApplicationID.ToString();
+
                 if(appointment.RetakeTestInfo != null)
                 {
                     lblRetakeFees.Text = appointment.RetakeTestInfo.PaidFees.ToString();
-
                 }
+
                 gbRetakeTest.Enabled = true;
                 lblHeader.Text = "Schedule Retake Test";
             }
@@ -103,9 +102,54 @@ namespace DVLD___Driving_Licenses_Managment.Controls
             if (!_HandleAppointmentLockedConstraint())
                 return;
         }
-        public void LoadInfo(int localID, int AppointmentID = -1)
+        private bool _HandlePreviousTestConstraint()
         {
-            _LocalApplicationID = localID;
+            switch (TestTypeID)
+            {
+                case clsTestTypes.enTestType.VisionTest:
+                    lblUserMessage.Visible = false;
+                    return true;
+
+                case clsTestTypes.enTestType.WrittenTest:
+                    if (!_LocalApplication.DoesAttendTestType(clsTestTypes.enTestType.VisionTest))
+                    {
+                        lblUserMessage.Text = "Cannot Sechule, Vision Test should be passed first";
+                        lblUserMessage.Visible = true;
+                        btnSave.Enabled = false;
+                        datePicker.Enabled = false;
+                        return false;
+
+                    }
+                    else
+                    {
+                        lblUserMessage.Visible = false;
+                        btnSave.Enabled = true;
+                        datePicker.Enabled = true;
+                    }
+                    return true;
+
+                case clsTestTypes.enTestType.StreetTest:
+                    if (!_LocalApplication.DoesAttendTestType(clsTestTypes.enTestType.WrittenTest))
+                    {
+                        lblUserMessage.Text = "Cannot Sechule, Written Test should be passed first";
+                        lblUserMessage.Visible = true;
+                        btnSave.Enabled = false;
+                        datePicker.Enabled = false;
+                        return false;
+                    }
+                    else
+                    {
+                        lblUserMessage.Visible = false;
+                        btnSave.Enabled = true;
+                        datePicker.Enabled = true;
+                    }
+                    return true;
+            }
+            return true;
+        }
+        public void LoadInfo(int LocalAppID, int AppointmentID = -1)
+        {
+            _LocalApplicationID = LocalAppID;
             _AppointmentID = AppointmentID; 
             _Appointment =  clsAppointment.Find(_AppointmentID);
             _LocalApplication = clsLocalDrivingLicenses.Find(_LocalApplicationID);
@@ -157,17 +201,16 @@ namespace DVLD___Driving_Licenses_Managment.Controls
             lblTotalFees.Text = (Convert.ToSingle(lblRetakeFees.Text) + Convert.ToSingle(lblFees.Text)).ToString();
             lblLicenseID.Text = _LocalApplication.ID.ToString();
             lblClassName.Text = _LocalApplication.LicenseClassesInfo.ClassName;
-            lblFullName.Text = _LocalApplication.FullName; 
+            lblFullName.Text = _LocalApplication.FullName;
+
+            if (!_HandlePreviousTestConstraint())
+                return;
+
         }
 
         public cntrlScheduleTest()
         {
             InitializeComponent();
-        }
-
-        private void gbTestType_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private bool _HandleAppointmentLockedConstraint()
@@ -183,8 +226,8 @@ namespace DVLD___Driving_Licenses_Managment.Controls
             else
                 lblUserMessage.Visible = false;
 
-            return true; 
 
+            return true; 
         }
         private bool _HandleRetakeApplication()
         {
@@ -233,11 +276,6 @@ namespace DVLD___Driving_Licenses_Managment.Controls
             }
             else
                 MessageBox.Show("Error: Data Is not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        private void lblUserMessage_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

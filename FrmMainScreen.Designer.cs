@@ -95,7 +95,7 @@
             this.applicationsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.applicationsToolStripMenuItem.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.reference;
             this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
-            this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(170, 34);
+            this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(170, 36);
             this.applicationsToolStripMenuItem.Text = "Applications";
             // 
             // drivingLicenseToolStripMenuItem
@@ -272,7 +272,7 @@
             this.managePeopleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.managePeopleToolStripMenuItem.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.group;
             this.managePeopleToolStripMenuItem.Name = "managePeopleToolStripMenuItem";
-            this.managePeopleToolStripMenuItem.Size = new System.Drawing.Size(125, 34);
+            this.managePeopleToolStripMenuItem.Size = new System.Drawing.Size(125, 36);
             this.managePeopleToolStripMenuItem.Text = " People";
             this.managePeopleToolStripMenuItem.Click += new System.EventHandler(this.managePeopleToolStripMenuItem_Click);
             // 
@@ -281,7 +281,7 @@
             this.manageUsersToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.manageUsersToolStripMenuItem.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.users;
             this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
-            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(106, 34);
+            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(106, 36);
             this.manageUsersToolStripMenuItem.Text = "Users";
             this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
             // 
@@ -290,7 +290,7 @@
             this.manageDriversToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.manageDriversToolStripMenuItem.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.driver;
             this.manageDriversToolStripMenuItem.Name = "manageDriversToolStripMenuItem";
-            this.manageDriversToolStripMenuItem.Size = new System.Drawing.Size(121, 34);
+            this.manageDriversToolStripMenuItem.Size = new System.Drawing.Size(121, 36);
             this.manageDriversToolStripMenuItem.Text = "Drivers";
             this.manageDriversToolStripMenuItem.Click += new System.EventHandler(this.accountSettingsToolStripMenuItem_Click);
             // 
@@ -304,7 +304,7 @@
             this.accountSettingsToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.accountSettingsToolStripMenuItem1.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.account_settings;
             this.accountSettingsToolStripMenuItem1.Name = "accountSettingsToolStripMenuItem1";
-            this.accountSettingsToolStripMenuItem1.Size = new System.Drawing.Size(214, 34);
+            this.accountSettingsToolStripMenuItem1.Size = new System.Drawing.Size(214, 36);
             this.accountSettingsToolStripMenuItem1.Text = "Account Settings";
             // 
             // currentUserInfoToolStripMenuItem

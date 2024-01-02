@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.CompilerServices;
-
 namespace DVLD_Data
 {
     public class Appointments_Data
@@ -300,12 +294,7 @@ namespace DVLD_Data
             {
                 Connection.Close(); 
             }
-
-
             return isFound;
         }
-
-
-
     }
 }

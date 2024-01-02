@@ -98,7 +98,7 @@
             this.gbTestType.TabIndex = 19;
             this.gbTestType.TabStop = false;
             this.gbTestType.Text = "Test Type";
-            this.gbTestType.Enter += new System.EventHandler(this.gbTestType_Enter);
+            //this.gbTestType.Enter += new System.EventHandler(this.gbTestType_Enter);
             // 
             // lblUserMessage
             // 
@@ -113,7 +113,7 @@
             this.lblUserMessage.Text = "This Appointment is LOCKED!";
             this.lblUserMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblUserMessage.Visible = false;
-            this.lblUserMessage.Click += new System.EventHandler(this.lblUserMessage_Click);
+            //this.lblUserMessage.Click += new System.EventHandler(this.lblUserMessage_Click);
             // 
             // btnSave
             // 

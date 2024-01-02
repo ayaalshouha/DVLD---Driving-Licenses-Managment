@@ -1,10 +1,5 @@
 ﻿using DVLD_Data;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using static DVLD_Buissness.clsApplication;
 
 namespace DVLD_Buissness
