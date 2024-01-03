@@ -226,7 +226,7 @@ namespace DVLD_Data
             SqlConnection Connection = new SqlConnection(DataSettings.ConnectionString);
             try
             {
-                string Query = "SELECT * FROM Drivers_Views order by FullName;";
+                string Query = "SELECT * FROM Drivers_Views order by ID asc;";
                 SqlCommand command = new SqlCommand(Query, Connection);
 
                 Connection.Open();

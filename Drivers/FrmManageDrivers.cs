@@ -1,4 +1,5 @@
-﻿using DVLD_Buissness;
+﻿using DVLD___Driving_Licenses_Managment.License;
+using DVLD_Buissness;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -82,9 +83,19 @@ namespace DVLD___Driving_Licenses_Managment.Drivers
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (textBox1.Text == "ID" || textBox1.Text == "PersonID" || textBox1.Text == "NationalID")
-                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-            else
-                e.Handled = !char.IsNumber(e.KeyChar); 
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar); 
+        }
+
+        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void driverLicensesHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int personID = (int)dgvDriversList.CurrentRow.Cells[1].Value;
+            FrmPersonLicensesHistory form = new FrmPersonLicensesHistory(personID); 
+            form.ShowDialog();
         }
     }
 }
