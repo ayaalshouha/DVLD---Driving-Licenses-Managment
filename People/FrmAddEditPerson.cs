@@ -195,8 +195,8 @@ namespace DVLD___Driving_Licenses_Managment
                 return;
             }
 
-            //if (!_HandleImage())
-            //    return;
+            if (!_HandleImage())
+                return;
 
 
             AssignDataToPersonObject();

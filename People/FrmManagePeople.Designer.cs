@@ -37,8 +37,7 @@
             this.tsmEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmSendEmail = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmPhoneCall = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmPersonLicensesHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -85,10 +84,9 @@
             this.tsmEdit,
             this.tsmDelete,
             this.toolStripMenuItem2,
-            this.tsmSendEmail,
-            this.tsmPhoneCall});
+            this.tsmPersonLicensesHistory});
             this.cmPeopleListOptions.Name = "cmPeopleListOptions";
-            this.cmPeopleListOptions.Size = new System.Drawing.Size(204, 208);
+            this.cmPeopleListOptions.Size = new System.Drawing.Size(295, 209);
             // 
             // tsmShowDetails
             // 
@@ -96,21 +94,21 @@
             this.tsmShowDetails.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.preview;
             this.tsmShowDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmShowDetails.Name = "tsmShowDetails";
-            this.tsmShowDetails.Size = new System.Drawing.Size(203, 32);
+            this.tsmShowDetails.Size = new System.Drawing.Size(294, 32);
             this.tsmShowDetails.Text = "Show Details";
             this.tsmShowDetails.Click += new System.EventHandler(this.tsmShowDetails_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(200, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(291, 6);
             // 
             // tsmAddPerson
             // 
             this.tsmAddPerson.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmAddPerson.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.add;
             this.tsmAddPerson.Name = "tsmAddPerson";
-            this.tsmAddPerson.Size = new System.Drawing.Size(203, 32);
+            this.tsmAddPerson.Size = new System.Drawing.Size(294, 32);
             this.tsmAddPerson.Text = "Add New Person";
             this.tsmAddPerson.Click += new System.EventHandler(this.tsmAddPerson_Click);
             // 
@@ -118,7 +116,7 @@
             // 
             this.tsmEdit.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.edit;
             this.tsmEdit.Name = "tsmEdit";
-            this.tsmEdit.Size = new System.Drawing.Size(203, 32);
+            this.tsmEdit.Size = new System.Drawing.Size(294, 32);
             this.tsmEdit.Text = "Edit Person";
             this.tsmEdit.Click += new System.EventHandler(this.tsmEdit_Click);
             // 
@@ -126,28 +124,22 @@
             // 
             this.tsmDelete.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.delete;
             this.tsmDelete.Name = "tsmDelete";
-            this.tsmDelete.Size = new System.Drawing.Size(203, 32);
+            this.tsmDelete.Size = new System.Drawing.Size(294, 32);
             this.tsmDelete.Text = "Delete Person";
             this.tsmDelete.Click += new System.EventHandler(this.tsmDelete_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(200, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(291, 6);
             // 
-            // tsmSendEmail
+            // tsmPersonLicensesHistory
             // 
-            this.tsmSendEmail.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.mail_up;
-            this.tsmSendEmail.Name = "tsmSendEmail";
-            this.tsmSendEmail.Size = new System.Drawing.Size(203, 32);
-            this.tsmSendEmail.Text = "Send Email";
-            // 
-            // tsmPhoneCall
-            // 
-            this.tsmPhoneCall.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.at_phone;
-            this.tsmPhoneCall.Name = "tsmPhoneCall";
-            this.tsmPhoneCall.Size = new System.Drawing.Size(203, 32);
-            this.tsmPhoneCall.Text = "Phone Call";
+            this.tsmPersonLicensesHistory.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.gpl;
+            this.tsmPersonLicensesHistory.Name = "tsmPersonLicensesHistory";
+            this.tsmPersonLicensesHistory.Size = new System.Drawing.Size(294, 32);
+            this.tsmPersonLicensesHistory.Text = "Show Person Licenses History";
+            this.tsmPersonLicensesHistory.Click += new System.EventHandler(this.tsmPhoneCall_Click);
             // 
             // label1
             // 
@@ -311,8 +303,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmAddPerson;
         private System.Windows.Forms.ToolStripMenuItem tsmEdit;
         private System.Windows.Forms.ToolStripMenuItem tsmDelete;
-        private System.Windows.Forms.ToolStripMenuItem tsmSendEmail;
-        private System.Windows.Forms.ToolStripMenuItem tsmPhoneCall;
+        private System.Windows.Forms.ToolStripMenuItem tsmPersonLicensesHistory;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolTip toolTip1;

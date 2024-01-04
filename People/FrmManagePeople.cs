@@ -1,4 +1,5 @@
-﻿using DVLD_Buissness;
+﻿using DVLD___Driving_Licenses_Managment.License;
+using DVLD_Buissness;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -124,6 +125,13 @@ namespace DVLD___Driving_Licenses_Managment
         {
            if(comboBox1.Text == "ID" || comboBox1.Text == "NationalID" || comboBox1.Text == "PhoneNumber")
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void tsmPhoneCall_Click(object sender, EventArgs e)
+        {
+            //porson licenses history 
+            FrmPersonLicensesHistory form = new FrmPersonLicensesHistory((int)dgvPersonList.CurrentRow.Cells[0].Value);
+            form.ShowDialog();
         }
     }
 }
