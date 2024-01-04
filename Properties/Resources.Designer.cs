@@ -403,6 +403,36 @@ namespace DVLD___Driving_Licenses_Managment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap driver__4_ {
+            get {
+                object obj = ResourceManager.GetObject("driver (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap driver__4_1 {
+            get {
+                object obj = ResourceManager.GetObject("driver (4)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap driver__5_ {
+            get {
+                object obj = ResourceManager.GetObject("driver (5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit {
             get {
                 object obj = ResourceManager.GetObject("edit", resourceCulture);
@@ -746,6 +776,26 @@ namespace DVLD___Driving_Licenses_Managment.Properties {
         internal static System.Drawing.Bitmap mail_up {
             get {
                 object obj = ResourceManager.GetObject("mail_up", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MainMenu_Wallpaper {
+            get {
+                object obj = ResourceManager.GetObject("MainMenu Wallpaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MainMenu_Wallpaper1 {
+            get {
+                object obj = ResourceManager.GetObject("MainMenu Wallpaper1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

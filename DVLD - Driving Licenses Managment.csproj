@@ -768,6 +768,11 @@
   <ItemGroup>
     <Content Include="bin\Debug\DVLD - Driving Licenses Managment.exe" />
     <Content Include="bin\Debug\DVLD - Driving Licenses Managment.pdb" />
+    <None Include="Resources\MainMenu Wallpaper1.png" />
+    <None Include="Resources\MainMenu Wallpaper.png" />
+    <None Include="Resources\driver %284%291.png" />
+    <None Include="Resources\driver %285%29.png" />
+    <None Include="Resources\driver %284%29.png" />
     <None Include="Resources\IconLogo.png" />
     <None Include="Resources\Logo Final.jpg" />
   </ItemGroup>
