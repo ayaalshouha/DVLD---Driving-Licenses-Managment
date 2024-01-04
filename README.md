@@ -43,7 +43,7 @@ Here are some screenshots from the application:
 
 **Main Menu** 
 
-<img width="960" alt="main menu" src="https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment/assets/129595827/0d51a52c-7db8-4fe0-98b3-59978ac96191">
+<img width="521" alt="main menu" src="https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment/assets/129595827/9130ec62-4cc9-4d06-924e-722b303ce7b2">
 
 **Input Validation** 
 
