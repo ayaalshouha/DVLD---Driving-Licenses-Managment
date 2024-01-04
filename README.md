@@ -106,6 +106,15 @@ Here are some screenshots from the application:
 
 <img width="960" alt="manage drivers" src="https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment/assets/129595827/4762af26-3a3f-47e0-9d7e-7f3166e7c712">
 
+## Compilation 
+
+1- **Clone The Repository** : 
+ git clone https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment.git
+ cd DVLD---Driving-Licenses-Managmen
+
+ 2- **Compile The Code** : 
+  - For Visual Studio :
+    Open the project in Visual Studio and compile using the IDE.
 
 ## Contact
 For inquiries or assistance, contact the project owner at **aya.alshouha11@gmail.com**.
