@@ -109,8 +109,10 @@ Here are some screenshots from the application:
 ## Compilation 
 
 1- **Clone The Repository** : 
-   'git clone https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment.git
-    cd DVLD---Driving-Licenses-Managmen'
+   ```bash
+      git clone https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment.git
+      cd DVLD---Driving-Licenses-Managment
+
 
  2- **Compile The Code** : 
   - **For Visual Studio** :
