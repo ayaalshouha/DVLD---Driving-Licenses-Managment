@@ -24,5 +24,10 @@ a .NET Desktop Application that designed with a three-tier architecture and inte
 - License Reactivation: Upon successful payment, the system activates the license, making it operational again.
 - Database Maintenance: Continuously update and maintain databases of People, Users, Drivers, Detained licenes, License classes, and Tests results for accurate record-keeping.
 
+### Admin access
+The application includes an admin user with default credentials for testing purposes:
+- Username : b
+- Password : b
+
 ### Contact
 For inquiries or assistance, contact the project owner at aya.alshouha11@gmail.com.
