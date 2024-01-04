@@ -113,8 +113,15 @@ Here are some screenshots from the application:
     cd DVLD---Driving-Licenses-Managmen
 
  2- **Compile The Code** : 
-  - For Visual Studio :
+  - **For Visual Studio** :
     Open the project in Visual Studio and compile using the IDE.
+
+## Execution 
+
+- **For Visual Studio**:
+  Run the compiled application from within the Visual Studio Community IDE.
+ - **For Windows** :
+   DVLD - Driving Licenses Managment.exe
 
 ## Contact
 For inquiries or assistance, contact the project owner at **aya.alshouha11@gmail.com**.
