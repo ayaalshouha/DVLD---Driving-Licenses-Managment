@@ -42,6 +42,7 @@ Here are some screenshots from the application:
 <img width="502" alt="login validation" src="https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment/assets/129595827/52f53131-fe29-4444-bddf-995120b3cd4c">
 
 **Main Menu** 
+
 <img width="960" alt="main menu" src="https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment/assets/129595827/0d51a52c-7db8-4fe0-98b3-59978ac96191">
 
 **Input Validation** 
@@ -56,9 +57,9 @@ Here are some screenshots from the application:
 
 <img width="960" alt="ContextMenuStrip options" src="https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment/assets/129595827/58d7c07d-552a-4662-ba5c-b017a8e88adf">
 
-**Serives** 
+**Services** 
 
-<img width="960" alt="ContextMenuStrip options" src="https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment/assets/129595827/7bebaa1d-0306-4d6c-9b59-da239f9919e6">
+<img width="960" alt="Services" src="https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment/assets/129595827/1c71d0d6-b247-4b95-9afc-c072c823ce7a">
 
 **Driver Licenses History** 
 
