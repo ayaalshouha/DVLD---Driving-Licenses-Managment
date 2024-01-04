@@ -1,5 +1,5 @@
 # DVLD - Driving and Vehicles Licenses Development
-a .NET Desktop Application that designed with a three-tier architecture and integrated with a Microsoft SQL Server database.
+a .NET desktop application structured with a three-tier architecture, seamlessly integrated with a Microsoft SQL Server database. It utilizes the capabilities of .NET Windows Form technology and follows the principles of Object-Oriented Programming (OOP).
 
 ## Key Features
 - **Login Logs**: Records login activities for users.
