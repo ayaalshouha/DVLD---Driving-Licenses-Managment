@@ -109,10 +109,11 @@ Here are some screenshots from the application:
 ## Compilation 
 
 1- **Clone The Repository** : 
-   ```bash
-      git clone https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment.git
-      cd DVLD---Driving-Licenses-Managment
 
+   ```bash
+git clone https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment.git
+cd DVLD---Driving-Licenses-Managment
+```
 
  2- **Compile The Code** : 
   - **For Visual Studio** :
@@ -122,8 +123,11 @@ Here are some screenshots from the application:
 
 - **For Visual Studio**:
   Run the compiled application from within the Visual Studio Community IDE.
+  
  - **For Windows** :
+```bash
    DVLD - Driving Licenses Managment.exe
+```
 
 ## Contact
 For inquiries or assistance, contact the project owner at **aya.alshouha11@gmail.com**.
