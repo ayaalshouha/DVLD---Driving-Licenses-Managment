@@ -27,8 +27,8 @@ a .NET Desktop Application that designed with a three-tier architecture and inte
 
 ### Admin access
 The application includes an admin user with default credentials for testing purposes:
-- **Username** : b
-- **Password** : b
+- **Username** : admin
+- **Password** : admin
 
 ### Contact
 For inquiries or assistance, contact the project owner at **aya.alshouha11@gmail.com**.
