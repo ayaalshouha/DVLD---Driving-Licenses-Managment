@@ -2,7 +2,8 @@
 a .NET Desktop Application that designed with a three-tier architecture and integrated with a Microsoft SQL Server database.
 
 ## Key Features
- - License Classes: Easily manage different license classes, allowing applicants to apply for specific categories such as Ordinary driving license, Small motorcycle, Commerical and etc.
+-Login Logs: Records login activities for users.
+- License Classes: Easily manage different license classes, allowing applicants to apply for specific categories such as Ordinary driving license, Small motorcycle, Commerical and etc.
 - Testing Procedures: Schedule and administer three essential tests - vision test, written test, and street test - ensuring applicants meet the necessary criteria for license issuance.
 - User/Drivers Database: Maintain a centralized database of users and drivers including details of drivers and individuals applying for various services.
 
