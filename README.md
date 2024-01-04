@@ -117,12 +117,12 @@ cd DVLD---Driving-Licenses-Managment
 
  2- **Compile The Code** : 
   - **For Visual Studio** :
-    Open the project in Visual Studio and compile using the IDE.
+     - Open the project in Visual Studio and compile using the IDE.
 
 ## Execution 
 
 - **For Visual Studio**:
-  Run the compiled application from within the Visual Studio Community IDE.
+     - Run the compiled application from within the Visual Studio Community IDE.
   
  - **For Windows** :
 ```bash
