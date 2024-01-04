@@ -32,8 +32,21 @@ The application includes an admin user with default credentials for testing purp
 
 ## Screenshots
 Here are some screenshots from the application:
+
 **login**
+
 <img width="506" alt="login" src="https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment/assets/129595827/f153b6ab-3831-4014-859e-d62dc986ea89">
+
+**Invalid login** 
+
+<img width="502" alt="login validation" src="https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment/assets/129595827/52f53131-fe29-4444-bddf-995120b3cd4c">
+
+**Main Menu** 
+<img width="960" alt="main menu" src="https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment/assets/129595827/0d51a52c-7db8-4fe0-98b3-59978ac96191">
+
+
+
+
 
 
 ## Contact
