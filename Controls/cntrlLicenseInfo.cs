@@ -36,8 +36,7 @@ namespace DVLD___Driving_Licenses_Managment.Controls
                 pbProfilePicture.Image = Resources.user_female__1_;
 
 
-
-            if(imagePath != "" && imagePath!=string.Empty)
+            if (imagePath != "" && imagePath != string.Empty) 
             {
                 if (File.Exists(imagePath))
                     pbProfilePicture.Load(imagePath);
@@ -90,11 +89,6 @@ namespace DVLD___Driving_Licenses_Managment.Controls
             }
 
             MessageBox.Show("Could not find this license.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        private void cntrlLicenseInfo_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

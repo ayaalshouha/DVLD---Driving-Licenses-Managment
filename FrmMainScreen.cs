@@ -189,5 +189,10 @@ namespace DVLD___Driving_Licenses_Managment
         {
             lblLoggedInUser.BorderStyle = BorderStyle.None;
         }
+
+        private void FrmMainScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

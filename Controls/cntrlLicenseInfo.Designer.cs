@@ -521,7 +521,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "cntrlLicenseInfo";
             this.Size = new System.Drawing.Size(886, 474);
-            this.Load += new System.EventHandler(this.cntrlLicenseInfo_Load);
+            //this.Load += new System.EventHandler(this.cntrlLicenseInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

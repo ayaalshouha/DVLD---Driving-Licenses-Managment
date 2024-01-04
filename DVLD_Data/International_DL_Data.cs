@@ -18,10 +18,10 @@ namespace DVLD_Data
             SqlConnection connection = new SqlConnection(DataSettings.ConnectionString);
             try
             {
-                string Query = "select * from InternationalLicenses where ID = @ID";
+                string Query = "select * from InternationalLicenses where ID = @ApplicationID";
 
                 SqlCommand command = new SqlCommand(Query, connection);
-                command.Parameters.AddWithValue("@ID", ApplicationID);
+                command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
 
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
@@ -57,7 +57,12 @@ namespace DVLD_Data
             SqlConnection Connection = new SqlConnection(DataSettings.ConnectionString);
             try
             {
-                string Query = @"INSERT INTO InternationalLicenses 
+                //deactivating all previous international licenses before adding a new one to the same driver
+
+                string Query = @"UPDATE InternationalLicenses SET isActive = 0 
+                                    WHERE DriverID = @DriverID;
+
+                            INSERT INTO InternationalLicenses 
                              VALUES (@ApplicationID,@DriverID, @IssuedUsingLocalLicenseID, @IssueDate, @ExpirationDate, @isActive, @CreatedByUserID);
                         SELECT SCOPE_IDENTITY();";
 

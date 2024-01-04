@@ -50,6 +50,10 @@ namespace DVLD___Driving_Licenses_Managment.Controls
             }
         }
 
+        public void FilterFocus()
+        {
+            txtInput.Focus();
+        }
         public cntrlLicenseInfoWithFilter()
         {
             InitializeComponent();

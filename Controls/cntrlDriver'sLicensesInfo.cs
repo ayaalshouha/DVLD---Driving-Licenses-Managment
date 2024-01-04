@@ -17,7 +17,11 @@ namespace DVLD___Driving_Licenses_Managment.Controls
             InitializeComponent();
         }
 
-
+        public void Clear()
+        {
+            _LocalLicensesHistory.Clear();
+            _InternationalLicensesHistory.Clear();
+        }
         private void _LoadLocalinfo()
         {
             _LocalLicensesHistory = clsDrviers.getLocalLicenses(_DriverID);
@@ -55,19 +59,30 @@ namespace DVLD___Driving_Licenses_Managment.Controls
         public void LoadInfo(int DriverID)
         {
              _DriverID = DriverID;
+            clsDrviers Driver = clsDrviers.Find(_DriverID); 
+
+            if(Driver == null)
+            {
+                MessageBox.Show($"No Driver Found with ID = {_DriverID} !!", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             _LoadInternationalinfo();
             _LoadLocalinfo();
-
         }
 
         public void LoadInfo_ByPersonID(int PersonID)
         {
-            clsDrviers _Driver = clsDrviers.Find_ByPersonID(PersonID);
+            clsDrviers Driver = clsDrviers.Find_ByPersonID(PersonID);
 
-            if (_Driver != null)
+            if (Driver != null)
             {
-                LoadInfo(_Driver.ID); 
+                _DriverID = Driver.ID;
+                _LoadInternationalinfo();
+                _LoadLocalinfo(); 
             }
+            else
+                MessageBox.Show($"There is No Driver associated with PersonID {PersonID} !!", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         private void showLicenseInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -81,11 +96,9 @@ namespace DVLD___Driving_Licenses_Managment.Controls
         private void showLicenseInfoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             //show international license info form 
-        }
-
-        private void cntrlDriver_sLicensesInfo_Load(object sender, EventArgs e)
-        {
-
+            int licenseID = (int)dgvInternationalHistory.CurrentRow.Cells[0].Value;
+            FrmShowInternationalLicenseInfo form = new FrmShowInternationalLicenseInfo(licenseID);
+            form.ShowDialog();
         }
     }
 }

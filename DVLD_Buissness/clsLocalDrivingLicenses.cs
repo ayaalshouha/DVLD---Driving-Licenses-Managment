@@ -1,6 +1,7 @@
 ﻿using DVLD_Data;
 using System;
 using System.Data;
+using System.Runtime.CompilerServices;
 
 namespace DVLD_Buissness
 {
@@ -128,6 +129,11 @@ namespace DVLD_Buissness
         {
             //total passed test for the applicant
             return Local_DL_Data.getPassedTestCount(LocalAppID); 
+        }
+
+        public bool DoesPassedAllTest()
+        {
+            return (PassedTest(this.ID) == 3); 
         }
 
         public static bool DoesItCancelled(int MainApplicationID)

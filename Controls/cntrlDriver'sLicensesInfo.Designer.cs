@@ -238,7 +238,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "cntrlDriver_sLicensesInfo";
             this.Size = new System.Drawing.Size(1118, 394);
-            this.Load += new System.EventHandler(this.cntrlDriver_sLicensesInfo_Load);
+            //this.Load += new System.EventHandler(this.cntrlDriver_sLicensesInfo_Load);
             this.groupBox1.ResumeLayout(false);
             this.tbLocalLicenses.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

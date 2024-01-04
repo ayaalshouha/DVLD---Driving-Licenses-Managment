@@ -99,16 +99,6 @@ namespace DVLD_Buissness
             return DriverData.Delete(ID);
         }
 
-        public static bool isExist(int ID)
-        {
-            return DriverData.isExist(ID);
-        }
-      
-        public static bool isExist_ByPersonID(int personid)
-        {
-            return DriverData.isExist_ByPersonID(personid);
-        }
-
         public static DataTable DriversList()
         {
             return DriverData.List();

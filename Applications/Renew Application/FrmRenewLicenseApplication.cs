@@ -36,27 +36,22 @@ namespace DVLD___Driving_Licenses_Managment.Applications.Renew_Application
                 return;
             }
 
-            if (PreviousLicense.ExpDate < DateTime.Now)
+            if (PreviousLicense.ExpDate > DateTime.Now)
             {
-                btnIssueLicense.Enabled = true;
-                lnkShowPersonHistory.Enabled = true; 
-            }
-            else
-            {
-                MessageBox.Show($"Selected License is NOT Expired , will be in {PreviousLicense.ExpDate.ToShortDateString()}", "Message Box",
-                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Selected License is NOT Expired yet, will be expired in {PreviousLicense.ExpDate.ToShortDateString()}", "Message Box",
+                  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
 
+            btnIssueLicense.Enabled = true;
+            lnkShowPersonHistory.Enabled = true;
             lblOldLicenseID.Text = PreviousLicenseID.ToString();
             lblIssueDate.Text = PreviousLicense.IssueDate.ToShortDateString();
             lblExpirationDate.Text = PreviousLicense.ExpDate.ToShortDateString();
             lblLicenseFees.Text = PreviousLicense.PaidFees.ToString();
             txtNotes.Text = PreviousLicense.Notes;
-            lblCreatedByUser.Text = clsUser.Username(PreviousLicense.CreatedByUserID); 
-
-            return; 
+            lblCreatedByUser.Text = clsUser.Username(PreviousLicense.CreatedByUserID);
         }
-
         private void lnkShowInternationalLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FrmShowLicenseInfo form = new FrmShowLicenseInfo(NewLicenseID); 
@@ -68,13 +63,15 @@ namespace DVLD___Driving_Licenses_Managment.Applications.Renew_Application
             if (MessageBox.Show("are you sure you want to renew this license?", "Message Box",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                NewLicense = PreviousLicense.RenewLicense(txtNotes.Text, clsGlobal.CurrentUser.ID);
+                NewLicense = PreviousLicense.RenewLicense(txtNotes.Text.Trim(), clsGlobal.CurrentUser.ID);
 
                 if (NewLicense != null)
                 {
                     MessageBox.Show($"License Renewd Successfully, New License ID = {NewLicense.ID}.", "Message Box",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     NewLicenseID = NewLicense.ID;
+
                     decimal AppFees = clsApplicationTypes.Fee((int)clsApplication.enApplicationTypes.RenewDL);
                     lblRenewApplicationID.Text = NewLicense.ApplicationID.ToString();
                     lblApplicationDate.Text = DateTime.Now.ToShortDateString();
@@ -86,6 +83,7 @@ namespace DVLD___Driving_Licenses_Managment.Applications.Renew_Application
                     lblRenewlLicenseID.Text = NewLicense.ID.ToString();
                     lblCreatedByUser.Text = NewLicense.CreatedByUserID.ToString();
                     lblTotalFees.Text = $"{NewLicense.PaidFees + AppFees}";
+                    cntrlLicenseInfoWithFilter1.FilterEnabled = false;
                     lnkShowNewLicenseInfo.Enabled = true;
                     btnIssueLicense.Enabled = false;
                 }
@@ -93,12 +91,11 @@ namespace DVLD___Driving_Licenses_Managment.Applications.Renew_Application
                     MessageBox.Show("Error happened while saving new license, check again later", "Message Box",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return;
         }
 
         private void FrmRenewLicenseApplication_Load(object sender, EventArgs e)
         {
-
+            cntrlLicenseInfoWithFilter1.FilterFocus();
         }
 
         private void ShowPersonHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

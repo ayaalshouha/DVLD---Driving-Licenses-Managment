@@ -88,9 +88,7 @@ namespace DVLD___Driving_Licenses_Managment.Applications.International_Applicati
             if (LocalLicenseID != -1)
             {
                 if (cntrlLicenseInfoWithFilter1.SelectedLicenseInfo.LicenseClass == 3 && cntrlLicenseInfoWithFilter1.SelectedLicenseInfo.isActive)
-                {
                     _AddingInternationalLicnseProcess();
-                }
                 else
                 {
                     MessageBox.Show("Selected license is NOT Allowed!", "Message Box", MessageBoxButtons.OK,

@@ -13,6 +13,7 @@ namespace DVLD___Driving_Licenses_Managment.License
 {
     public partial class FrmIssueDrivingLicense : Form
     {
+        private clsLocalDrivingLicenses LocalApplication; 
         private int local_applicationID = -1; 
         public FrmIssueDrivingLicense(int LocalApplicationID)
         {
@@ -22,15 +23,39 @@ namespace DVLD___Driving_Licenses_Managment.License
 
         private void FrmIssueDrivingLicense_Load(object sender, EventArgs e)
         {
+            txtNotes.Focus();
+            LocalApplication = clsLocalDrivingLicenses.Find(local_applicationID);
+
+            if(LocalApplication == null)
+            {
+                MessageBox.Show($"NO Applicant with ID = {local_applicationID} !!", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+
+            if (!LocalApplication.DoesPassedAllTest())
+            {
+                MessageBox.Show("Applicant should passed all test first!!", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+
+            int LicenseID = LocalApplication.getLicenseID(); 
+
+            if(LicenseID != -1)
+            {
+                MessageBox.Show("Applicant already has a license that associated with this application!!", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+
             cntrlDrivingLicenseAndApplicationBasicInfo1.LoadInformation(local_applicationID); 
         }
 
         
         private void btnIssue_Click(object sender, EventArgs e)
         {
-            clsLocalDrivingLicenses LocalApplication = clsLocalDrivingLicenses.Find(local_applicationID);
-
-            int LicenseID = LocalApplication.IssueLicenseForTheFirstTime(clsGlobal.CurrentUser.ID,txtNotes.Text); 
+            int LicenseID = LocalApplication.IssueLicenseForTheFirstTime(clsGlobal.CurrentUser.ID,txtNotes.Text.Trim()); 
 
             if(LicenseID != -1)
             {

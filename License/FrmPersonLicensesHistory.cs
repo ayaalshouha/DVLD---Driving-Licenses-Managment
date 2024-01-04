@@ -14,7 +14,7 @@ namespace DVLD___Driving_Licenses_Managment.License
     public partial class FrmPersonLicensesHistory : Form
     {
         private int _PersonID = -1;
-        public FrmPersonLicensesHistory(int PersonID)
+        public FrmPersonLicensesHistory(int PersonID = -1)
         {
             _PersonID = PersonID;
             InitializeComponent();

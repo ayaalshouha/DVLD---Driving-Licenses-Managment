@@ -132,9 +132,9 @@
             this.btnIssueLicense.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIssueLicense.Location = new System.Drawing.Point(904, 790);
             this.btnIssueLicense.Name = "btnIssueLicense";
-            this.btnIssueLicense.Size = new System.Drawing.Size(126, 37);
+            this.btnIssueLicense.Size = new System.Drawing.Size(175, 37);
             this.btnIssueLicense.TabIndex = 184;
-            this.btnIssueLicense.Text = "Issue";
+            this.btnIssueLicense.Text = "Issue Replacement";
             this.btnIssueLicense.UseVisualStyleBackColor = true;
             this.btnIssueLicense.Click += new System.EventHandler(this.btnIssueLicense_Click);
             // 
@@ -253,11 +253,11 @@
             // lblHeader
             // 
             this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.Red;
-            this.lblHeader.Location = new System.Drawing.Point(386, 9);
+            this.lblHeader.Location = new System.Drawing.Point(334, 9);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(354, 26);
+            this.lblHeader.Size = new System.Drawing.Size(458, 32);
             this.lblHeader.TabIndex = 181;
             this.lblHeader.Text = "Replacement for Damaged License";
             this.lblHeader.Click += new System.EventHandler(this.label1_Click);
