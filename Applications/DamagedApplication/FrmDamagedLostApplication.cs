@@ -27,21 +27,21 @@ namespace DVLD___Driving_Licenses_Managment.Applications.DamagedApplication
             this.Close();
         }
 
-        private void cntrlLicenseInfoWithFilter1_OnLicenseSelected(int obj)
-        {
-            PreviousLicenseID = obj;
-            PreviousLicense = cntrlLicenseInfoWithFilter1.SelectedLicenseInfo;
-            lnkShowPersonHistory.Enabled = true;
-            lblOldLicenseID.Text = PreviousLicenseID.ToString();
-            lblCreatedByUser.Text = clsUser.Username(PreviousLicense.CreatedByUserID);
+        //private void cntrlLicenseInfoWithFilter1_OnLicenseSelected(int obj)
+        //{
+        //    PreviousLicenseID = obj;
+        //    PreviousLicense = cntrlLicenseInfoWithFilter1.SelectedLicenseInfo;
+        //    lnkShowPersonHistory.Enabled = true;
+        //    lblOldLicenseID.Text = PreviousLicenseID.ToString();
+        //    lblCreatedByUser.Text = clsUser.Username(PreviousLicense.CreatedByUserID);
 
-            if (!PreviousLicense.isActive) {
-                MessageBox.Show("Selected license is NOT active!", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; 
-            }
+        //    if (!PreviousLicense.isActive) {
+        //        MessageBox.Show("Selected license is NOT active!", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        return; 
+        //    }
 
-            btnIssueLicense.Enabled = true;
-        }
+        //    btnIssueLicense.Enabled = true;
+        //}
 
         private void lnkShowPersonHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -106,6 +106,23 @@ namespace DVLD___Driving_Licenses_Managment.Applications.DamagedApplication
             decimal AppFees = clsApplicationTypes.Fee((int)clsApplication.enApplicationTypes.DamagedReplacement);
             lblFees.Text = AppFees.ToString();
 
+        }
+
+        private void cntrlLicenseInfoWithFilter1_OnLicenseSelected(object sender, Controls.cntrlLicenseInfoWithFilter.LicensesSelectedEventArgs e)
+        {
+            PreviousLicenseID = e.SelectedLicense.ID;
+            PreviousLicense = e.SelectedLicense;
+            lnkShowPersonHistory.Enabled = true;
+            lblOldLicenseID.Text = PreviousLicenseID.ToString();
+            lblCreatedByUser.Text = clsUser.Username(PreviousLicense.CreatedByUserID);
+
+            if (!PreviousLicense.isActive)
+            {
+                MessageBox.Show("Selected license is NOT active!", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            btnIssueLicense.Enabled = true;
         }
     }
 }

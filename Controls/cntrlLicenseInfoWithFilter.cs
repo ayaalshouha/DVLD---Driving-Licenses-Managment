@@ -14,16 +14,41 @@ namespace DVLD___Driving_Licenses_Managment.Controls
     public partial class cntrlLicenseInfoWithFilter : UserControl
     {
 
-        // Define a custom event handler delegate with parameters
-        public event Action<int> OnLicenseSelected;
-        // Create a protected method to raise the event with a parameter
-        protected virtual void LicenseSelected(int LicenseID)
+        //// Define a custom event handler delegate with parameters
+        //public event Action<int> OnLicenseSelected;
+        //// Create a protected method to raise the event with a parameter
+        //protected virtual void LicenseSelected(int LicenseID)
+        //{
+        //    Action<int> handler = OnLicenseSelected;
+        //    if (handler != null)
+        //    {
+        //        handler(LicenseID); // Raise the event with the parameter
+        //    }
+        //}
+
+
+
+        //declare EventArgs class 
+        public class LicensesSelectedEventArgs : EventArgs
         {
-            Action<int> handler = OnLicenseSelected;
-            if (handler != null)
+            public clsLicenses SelectedLicense { get; }
+
+            public LicensesSelectedEventArgs(clsLicenses License)
             {
-                handler(LicenseID); // Raise the event with the parameter
+                this.SelectedLicense = License;
             }
+        }
+
+        //declare event handler 
+        public event EventHandler<LicensesSelectedEventArgs> OnLicenseSelected;
+
+        public void RaiseOnLicenseSelected(clsLicenses license)
+        {
+            RaiseOnLicenseSelected(new LicensesSelectedEventArgs(license)); 
+        }
+        protected virtual void RaiseOnLicenseSelected(LicensesSelectedEventArgs e)
+        {
+            OnLicenseSelected?.Invoke(this, e);
         }
 
         private clsLicenses _License;
@@ -73,9 +98,14 @@ namespace DVLD___Driving_Licenses_Managment.Controls
             {
                 cntrlLicenseInfo1.LoadLicenseInfo(_License.ID);
 
+                //if(OnLicenseSelected != null)
+                //    // Raise the event with a parameter
+                //    OnLicenseSelected(_LicenseID);
+
                 if(OnLicenseSelected != null)
-                    // Raise the event with a parameter
-                    OnLicenseSelected(_LicenseID);
+                {
+                    RaiseOnLicenseSelected(_License);
+                }
             }
         }
 
@@ -89,9 +119,14 @@ namespace DVLD___Driving_Licenses_Managment.Controls
                 FilterEnabled = false;
                 cntrlLicenseInfo1.LoadLicenseInfo(_License.ID);
 
+                //if(OnLicenseSelected != null)
+                //    // Raise the event with a parameter
+                //    OnLicenseSelected(_LicenseID);
+
                 if (OnLicenseSelected != null)
-                    // Raise the event with a parameter
-                    OnLicenseSelected(_LicenseID);
+                {
+                    RaiseOnLicenseSelected(_License);
+                }
 
             }
         }

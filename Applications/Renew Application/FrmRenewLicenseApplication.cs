@@ -24,34 +24,34 @@ namespace DVLD___Driving_Licenses_Managment.Applications.Renew_Application
             InitializeComponent();
         }
 
-        private void cntrlLicenseInfoWithFilter1_OnLicenseSelected(int obj)
-        {
-            PreviousLicenseID = obj;
-            PreviousLicense = cntrlLicenseInfoWithFilter1.SelectedLicenseInfo;
+        //private void cntrlLicenseInfoWithFilter1_OnLicenseSelected(int obj)
+        //{
+        //    PreviousLicenseID = obj;
+        //    PreviousLicense = cntrlLicenseInfoWithFilter1.SelectedLicenseInfo;
 
 
-            if (!PreviousLicense.isActive)
-            {
-                MessageBox.Show("Selected license is NOT active!", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+        //    if (!PreviousLicense.isActive)
+        //    {
+        //        MessageBox.Show("Selected license is NOT active!", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        return;
+        //    }
 
-            if (PreviousLicense.ExpDate > DateTime.Now)
-            {
-                MessageBox.Show($"Selected License is NOT Expired yet, will be expired in {PreviousLicense.ExpDate.ToShortDateString()}", "Message Box",
-                  MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+        //    if (PreviousLicense.ExpDate > DateTime.Now)
+        //    {
+        //        MessageBox.Show($"Selected License is NOT Expired yet, will be expired in {PreviousLicense.ExpDate.ToShortDateString()}", "Message Box",
+        //          MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        return;
+        //    }
 
-            btnIssueLicense.Enabled = true;
-            lnkShowPersonHistory.Enabled = true;
-            lblOldLicenseID.Text = PreviousLicenseID.ToString();
-            lblIssueDate.Text = PreviousLicense.IssueDate.ToShortDateString();
-            lblExpirationDate.Text = PreviousLicense.ExpDate.ToShortDateString();
-            lblLicenseFees.Text = PreviousLicense.PaidFees.ToString();
-            txtNotes.Text = PreviousLicense.Notes;
-            lblCreatedByUser.Text = clsUser.Username(PreviousLicense.CreatedByUserID);
-        }
+        //    btnIssueLicense.Enabled = true;
+        //    lnkShowPersonHistory.Enabled = true;
+        //    lblOldLicenseID.Text = PreviousLicenseID.ToString();
+        //    lblIssueDate.Text = PreviousLicense.IssueDate.ToShortDateString();
+        //    lblExpirationDate.Text = PreviousLicense.ExpDate.ToShortDateString();
+        //    lblLicenseFees.Text = PreviousLicense.PaidFees.ToString();
+        //    txtNotes.Text = PreviousLicense.Notes;
+        //    lblCreatedByUser.Text = clsUser.Username(PreviousLicense.CreatedByUserID);
+        //}
         private void lnkShowInternationalLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FrmShowLicenseInfo form = new FrmShowLicenseInfo(NewLicenseID); 
@@ -107,6 +107,35 @@ namespace DVLD___Driving_Licenses_Managment.Applications.Renew_Application
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cntrlLicenseInfoWithFilter1_OnLicenseSelected(object sender, Controls.cntrlLicenseInfoWithFilter.LicensesSelectedEventArgs e)
+        {
+            PreviousLicenseID = e.SelectedLicense.ID;
+            PreviousLicense = e.SelectedLicense;
+
+
+            if (!PreviousLicense.isActive)
+            {
+                MessageBox.Show("Selected license is NOT active!", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (PreviousLicense.ExpDate > DateTime.Now)
+            {
+                MessageBox.Show($"Selected License is NOT Expired yet, will be expired in {PreviousLicense.ExpDate.ToShortDateString()}", "Message Box",
+                  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            btnIssueLicense.Enabled = true;
+            lnkShowPersonHistory.Enabled = true;
+            lblOldLicenseID.Text = PreviousLicenseID.ToString();
+            lblIssueDate.Text = PreviousLicense.IssueDate.ToShortDateString();
+            lblExpirationDate.Text = PreviousLicense.ExpDate.ToShortDateString();
+            lblLicenseFees.Text = PreviousLicense.PaidFees.ToString();
+            txtNotes.Text = PreviousLicense.Notes;
+            lblCreatedByUser.Text = clsUser.Username(PreviousLicense.CreatedByUserID);
         }
     }
 }

@@ -105,14 +105,67 @@ namespace DVLD___Driving_Licenses_Managment.Applications.International_Applicati
         }
 
 
-        private void cntrlLicenseInfoWithFilter1_OnLicenseSelected(int obj)
+        //private void cntrlLicenseInfoWithFilter1_OnLicenseSelected(int obj)
+        //{
+            //LocalLicenseID = obj;
+            //lblLocalLicenseID.Text = LocalLicenseID.ToString();
+
+            //if(cntrlLicenseInfoWithFilter1.SelectedLicenseInfo.LicenseClass == 3)
+            //{
+            //    int ActiveInternationalLicenseID = clsInternational_DL.getActiveLicenseID(cntrlLicenseInfoWithFilter1.SelectedLicenseInfo.DriverID);
+
+            //    if (ActiveInternationalLicenseID == -1)
+            //    {
+            //        btnIssueLicense.Enabled = true;
+            //        lnkShowInternationalLicenseInfo.Enabled = false;
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("NOT ALLOWED! The selected license is already associated with an international license!", "Message Box",
+            //            MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            //        InternationalLicenseID = ActiveInternationalLicenseID;
+            //        lnkShowInternationalLicenseInfo.Enabled = true;
+            //        btnIssueLicense.Enabled = false;
+
+            //        clsInternational_DL InternationaLicense = clsInternational_DL.Find(ActiveInternationalLicenseID);
+                    
+            //        lblInternationalLicenseID.Text = ActiveInternationalLicenseID.ToString();
+            //        lblApplicationID.Text = InternationaLicense.ApplicationID.ToString();
+            //        lblApplicationDate.Text = InternationaLicense.MainApplicationInfo.Date.ToShortDateString();
+            //        lblCreatedByUser.Text = clsUser.Username(InternationaLicense.CreatedByUserID);
+            //        lblIssueDate.Text = InternationaLicense.IssueDate.ToShortDateString();
+            //        lblExpirationDate.Text = InternationaLicense.ExpDate.ToShortDateString();
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Selected license is NOT Allowed, License class should be 3!", "Message Box", MessageBoxButtons.OK,
+            //           MessageBoxIcon.Error);
+
+            //    lblInternationalLicenseID.Text = "[???]";
+            //    lblApplicationID.Text = "[???]";
+            //    lblApplicationDate.Text = "[???]";
+            //    btnIssueLicense.Enabled = false;
+            //}
+
+        //}
+
+        private void lnkShowInternationalLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            LocalLicenseID = obj;
+            //form show international license details
+            FrmShowInternationalLicenseInfo form = new FrmShowInternationalLicenseInfo(InternationalLicenseID); 
+            form.ShowDialog();
+        }
+
+        private void cntrlLicenseInfoWithFilter1_OnLicenseSelected(object sender, Controls.cntrlLicenseInfoWithFilter.LicensesSelectedEventArgs e)
+        {
+            LocalLicenseID = e.SelectedLicense.ID;
             lblLocalLicenseID.Text = LocalLicenseID.ToString();
 
-            if(cntrlLicenseInfoWithFilter1.SelectedLicenseInfo.LicenseClass == 3)
+            if (e.SelectedLicense.LicenseClass == 3)
             {
-                int ActiveInternationalLicenseID = clsInternational_DL.getActiveLicenseID(cntrlLicenseInfoWithFilter1.SelectedLicenseInfo.DriverID);
+                int ActiveInternationalLicenseID = clsInternational_DL.getActiveLicenseID(e.SelectedLicense.DriverID);
 
                 if (ActiveInternationalLicenseID == -1)
                 {
@@ -129,7 +182,7 @@ namespace DVLD___Driving_Licenses_Managment.Applications.International_Applicati
                     btnIssueLicense.Enabled = false;
 
                     clsInternational_DL InternationaLicense = clsInternational_DL.Find(ActiveInternationalLicenseID);
-                    
+
                     lblInternationalLicenseID.Text = ActiveInternationalLicenseID.ToString();
                     lblApplicationID.Text = InternationaLicense.ApplicationID.ToString();
                     lblApplicationDate.Text = InternationaLicense.MainApplicationInfo.Date.ToShortDateString();
@@ -148,14 +201,6 @@ namespace DVLD___Driving_Licenses_Managment.Applications.International_Applicati
                 lblApplicationDate.Text = "[???]";
                 btnIssueLicense.Enabled = false;
             }
-
-        }
-
-        private void lnkShowInternationalLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            //form show international license details
-            FrmShowInternationalLicenseInfo form = new FrmShowInternationalLicenseInfo(InternationalLicenseID); 
-            form.ShowDialog();
         }
     }
 }

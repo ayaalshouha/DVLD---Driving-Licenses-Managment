@@ -28,30 +28,30 @@ namespace DVLD___Driving_Licenses_Managment.Applications.Detain_License
             this.Close();
         }
 
-        private void cntrlLicenseInfoWithFilter1_OnLicenseSelected(int obj)
-        {
-            LicenseID = obj;
-            License = cntrlLicenseInfoWithFilter1.SelectedLicenseInfo;
+        //private void cntrlLicenseInfoWithFilter1_OnLicenseSelected(int obj)
+        //{
+        //    LicenseID = obj;
+        //    License = cntrlLicenseInfoWithFilter1.SelectedLicenseInfo;
 
-            if( License.isDetained) {
-                MessageBox.Show("Selected license is already detained, Choose another one", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+        //    if( License.isDetained) {
+        //        MessageBox.Show("Selected license is already detained, Choose another one", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        return;
+        //    }
 
-            if (!License.isActive){
-                MessageBox.Show("Selected license is NOT active!", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+        //    if (!License.isActive){
+        //        MessageBox.Show("Selected license is NOT active!", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        return;
+        //    }
 
 
-            lblDetainDate.Text = DateTime.Now.ToShortDateString();
-            lblLicenseID.Text = LicenseID.ToString();
-            lblCreatedByUser.Text = clsGlobal.CurrentUser.username;
-            btnIDetainLicense.Enabled = true;
-            lnkShowPersonHistory.Enabled = true; 
-            lnkShowLicenseInfo.Enabled = true;
-            return;
-        }
+        //    lblDetainDate.Text = DateTime.Now.ToShortDateString();
+        //    lblLicenseID.Text = LicenseID.ToString();
+        //    lblCreatedByUser.Text = clsGlobal.CurrentUser.username;
+        //    btnIDetainLicense.Enabled = true;
+        //    lnkShowPersonHistory.Enabled = true; 
+        //    lnkShowLicenseInfo.Enabled = true;
+        //    return;
+        //}
 
         private void btnIDetainLicense_Click(object sender, EventArgs e)
         {
@@ -102,6 +102,32 @@ namespace DVLD___Driving_Licenses_Managment.Applications.Detain_License
             }
             else
                 errorProvider1.SetError(txtFineFees, null);
+        }
+
+        private void cntrlLicenseInfoWithFilter1_OnLicenseSelected(object sender, Controls.cntrlLicenseInfoWithFilter.LicensesSelectedEventArgs e)
+        {
+            LicenseID = e.SelectedLicense.ID;
+            License = e.SelectedLicense;
+
+            if (License.isDetained)
+            {
+                MessageBox.Show("Selected license is already detained, Choose another one", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!License.isActive)
+            {
+                MessageBox.Show("Selected license is NOT active!", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            lblDetainDate.Text = DateTime.Now.ToShortDateString();
+            lblLicenseID.Text = LicenseID.ToString();
+            lblCreatedByUser.Text = clsGlobal.CurrentUser.username;
+            btnIDetainLicense.Enabled = true;
+            lnkShowPersonHistory.Enabled = true;
+            lnkShowLicenseInfo.Enabled = true;
+            return;
         }
     }
 }

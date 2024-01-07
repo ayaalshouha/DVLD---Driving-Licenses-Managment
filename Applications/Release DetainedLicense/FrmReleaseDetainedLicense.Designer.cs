@@ -350,7 +350,7 @@
             this.cntrlLicenseInfoWithFilter1.Name = "cntrlLicenseInfoWithFilter1";
             this.cntrlLicenseInfoWithFilter1.Size = new System.Drawing.Size(898, 558);
             this.cntrlLicenseInfoWithFilter1.TabIndex = 197;
-            this.cntrlLicenseInfoWithFilter1.OnLicenseSelected += new System.Action<int>(this.cntrlLicenseInfoWithFilter1_OnLicenseSelected);
+            this.cntrlLicenseInfoWithFilter1.OnLicenseSelected += new System.EventHandler<DVLD___Driving_Licenses_Managment.Controls.cntrlLicenseInfoWithFilter.LicensesSelectedEventArgs>(this.cntrlLicenseInfoWithFilter1_OnLicenseSelected);
             // 
             // FrmReleaseDetainedLicense
             // 
