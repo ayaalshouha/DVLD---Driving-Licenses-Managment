@@ -72,6 +72,7 @@
             this.cntrlPersonCardWithFilter1.Name = "cntrlPersonCardWithFilter1";
             this.cntrlPersonCardWithFilter1.Size = new System.Drawing.Size(885, 448);
             this.cntrlPersonCardWithFilter1.TabIndex = 6;
+            this.cntrlPersonCardWithFilter1.onPersonSelected += new System.EventHandler<DVLD___Driving_Licenses_Managment.cntrlPersonCardWithFilter.PersonEventArgs>(this.cntrlPersonCardWithFilter1_onPersonSelected);
             // 
             // FrmFindPerson
             // 

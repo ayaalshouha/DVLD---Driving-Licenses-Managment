@@ -1,24 +1,46 @@
 ﻿using DVLD_Buissness;
 using System;
 using System.Windows.Forms;
+using static DVLD___Driving_Licenses_Managment.Controls.cntrlLicenseInfoWithFilter;
 
 namespace DVLD___Driving_Licenses_Managment
 {
     public partial class cntrlPersonCardWithFilter : UserControl
     {
-        //Define a custom event handler delegate with parameters
-        public event Action<int> OnPersonSelected;
+        ////Define a custom event handler delegate with parameters
+        //public event Action<int> OnPersonSelected;
 
-        //Create a protected method to raise the event with a parameter
-        protected virtual void PersonSelected(int PersonID)
+        ////Create a protected method to raise the event with a parameter
+        //protected virtual void PersonSelected(int PersonID)
+        //{
+        //    Action<int> handler = OnPersonSelected;
+        //    if (handler != null)
+        //    {
+        //        //Raise the event with the parameter
+        //        handler(PersonID);
+        //    }
+        //}
+
+        public class PersonEventArgs : EventArgs
         {
-            Action<int> handler = OnPersonSelected;
-            if (handler != null)
+            public clsPerson SelectedPerson { get; }
+            public PersonEventArgs(clsPerson person)
             {
-                //Raise the event with the parameter
-                handler(PersonID);
+                this.SelectedPerson = person;
             }
         }
+
+        public event EventHandler<PersonEventArgs> onPersonSelected;
+
+        public void RaiseOnPersonSelected( clsPerson perosn)
+        {
+            RaiseOnPersonSelected(new PersonEventArgs(perosn));
+        }
+        protected virtual void RaiseOnPersonSelected(PersonEventArgs e)
+        {
+            onPersonSelected?.Invoke(this, e);
+        }
+
         public cntrlPersonCardWithFilter()
         {
             InitializeComponent();
@@ -70,15 +92,16 @@ namespace DVLD___Driving_Licenses_Managment
             {
                 cntrPersonCard1.LoadPersonInfo(personID);
                 txtInput.Text = personID.ToString();
-                cbFindby.Text = "PersonID"; 
-            }
-               
+                cbFindby.Text = "PersonID";
 
-            if (OnPersonSelected != null)
-            {
-                PersonSelected(personID);
+                if (onPersonSelected != null)
+                {
+                    //PersonSelected(personID);
+                    RaiseOnPersonSelected(SelectedPersonInfo);
+                }
             }
-            return;
+            else
+                MessageBox.Show("Person NOT Found", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error); 
         }
         private void btnFind_Click(object sender, EventArgs e)
         {
@@ -90,11 +113,12 @@ namespace DVLD___Driving_Licenses_Managment
             if(cbFindby.SelectedItem.ToString() == "PersonID")
             {
                 if(int.TryParse(txtInput.Text, out int PeronID)){
-                    cntrPersonCard1.LoadPersonInfo(PeronID);
 
-                    if (OnPersonSelected != null)
+                    cntrPersonCard1.LoadPersonInfo(PeronID);
+                    if (onPersonSelected != null)
                     {
-                        PersonSelected(PeronID);
+                        //PersonSelected(personID);
+                        RaiseOnPersonSelected(SelectedPersonInfo);
                     }
                 }
             }

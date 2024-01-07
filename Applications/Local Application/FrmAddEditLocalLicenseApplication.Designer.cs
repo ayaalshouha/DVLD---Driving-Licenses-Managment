@@ -107,7 +107,7 @@
             this.cntrlPersonCardWithFilter1.Name = "cntrlPersonCardWithFilter1";
             this.cntrlPersonCardWithFilter1.Size = new System.Drawing.Size(885, 450);
             this.cntrlPersonCardWithFilter1.TabIndex = 0;
-            this.cntrlPersonCardWithFilter1.OnPersonSelected += new System.Action<int>(this.cntrlPersonCardWithFilter1_OnPersonSelected);
+            //this.cntrlPersonCardWithFilter1.OnPersonSelected += new System.Action<int>(this.cntrlPersonCardWithFilter1_OnPersonSelected);
             // 
             // tabPageApplicationInfo
             // 

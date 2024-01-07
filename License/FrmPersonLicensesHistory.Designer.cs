@@ -81,7 +81,7 @@
             this.cntrlPersonCardWithFilter1.Name = "cntrlPersonCardWithFilter1";
             this.cntrlPersonCardWithFilter1.Size = new System.Drawing.Size(905, 466);
             this.cntrlPersonCardWithFilter1.TabIndex = 209;
-            this.cntrlPersonCardWithFilter1.OnPersonSelected += new System.Action<int>(this.cntrlPersonCardWithFilter1_OnPersonSelected);
+            this.cntrlPersonCardWithFilter1.onPersonSelected += new System.EventHandler<DVLD___Driving_Licenses_Managment.cntrlPersonCardWithFilter.PersonEventArgs>(this.cntrlPersonCardWithFilter1_onPersonSelected);
             // 
             // cntrlDriver_sLicensesInfo1
             // 

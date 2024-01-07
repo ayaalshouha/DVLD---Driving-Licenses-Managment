@@ -43,11 +43,18 @@ namespace DVLD___Driving_Licenses_Managment.License
             MessageBox.Show("No ID Found", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error); 
         }
 
-        private void cntrlPersonCardWithFilter1_OnPersonSelected(int obj)
+        //private void cntrlPersonCardWithFilter1_OnPersonSelected(int obj)
+        //{
+        //    _PersonID = obj;
+        //    cntrlPersonCardWithFilter1.FilterEnabeled = false; 
+        //    cntrlDriver_sLicensesInfo1.LoadInfo_ByPersonID(_PersonID); 
+        //}
+
+        private void cntrlPersonCardWithFilter1_onPersonSelected(object sender, cntrlPersonCardWithFilter.PersonEventArgs e)
         {
-            _PersonID = obj;
-            cntrlPersonCardWithFilter1.FilterEnabeled = false; 
-            cntrlDriver_sLicensesInfo1.LoadInfo_ByPersonID(_PersonID); 
+            _PersonID = e.SelectedPerson.ID;
+            cntrlPersonCardWithFilter1.FilterEnabeled = false;
+            cntrlDriver_sLicensesInfo1.LoadInfo_ByPersonID(_PersonID);
         }
     }
 }

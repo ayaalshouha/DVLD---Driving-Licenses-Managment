@@ -19,5 +19,10 @@ namespace DVLD___Driving_Licenses_Managment
             }
             this.Close();
         }
+
+        private void cntrlPersonCardWithFilter1_onPersonSelected(object sender, cntrlPersonCardWithFilter.PersonEventArgs e)
+        {
+
+        }
     }
 }
