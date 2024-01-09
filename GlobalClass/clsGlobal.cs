@@ -9,7 +9,7 @@ namespace DVLD___Driving_Licenses_Managment
 {
     public class Logger
     {
-        public delegate bool LogAction (int loggedInUserID);
+        public delegate bool LogAction (clsUser loggedInUser);
         private LogAction _LogAction; 
 
         public Logger(LogAction Action)
@@ -17,9 +17,9 @@ namespace DVLD___Driving_Licenses_Managment
             _LogAction = Action;
         }
 
-        public bool Log(int loggedInUserID)
+        public bool Log(clsUser loggedInUser)
         {
-            return _LogAction(loggedInUserID);
+            return _LogAction(loggedInUser);
         }
     }
 
@@ -28,8 +28,23 @@ namespace DVLD___Driving_Licenses_Managment
         public static clsUser CurrentUser;
        
         //save the last username and password to a file 
-        public static bool RememberUsernameAndPassword(string username, string password)
+        public static bool RememberUsernameAndPassword(clsUser user = null)
         {
+            string username, password;
+
+            if (user == null)
+            {
+                username = "";
+                password = "";
+
+            }
+            else
+            {
+                username = user.username; 
+                password = user.password;
+            }
+
+
             try
             {
                 string currentDirectory = System.IO.Directory.GetCurrentDirectory();
@@ -54,7 +69,7 @@ namespace DVLD___Driving_Licenses_Managment
             }
             return false;
         }
-   
+
         //get the stored username and password
         public static bool getStoredUsernameAndPassword(ref string Username, ref string Password)
         {

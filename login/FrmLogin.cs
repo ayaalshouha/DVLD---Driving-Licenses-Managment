@@ -39,20 +39,24 @@ namespace DVLD___Driving_Licenses_Managment
 
                     if(clsGlobal.CurrentUser != null)
                     {
+                        Logger FileLogger = new Logger(clsGlobal.RememberUsernameAndPassword); 
+
                         if (checkBox1.Checked)
                         {
-                            clsGlobal.RememberUsernameAndPassword(txtUsername.Text, txtPassword.Text);
+                            FileLogger.Log(clsGlobal.CurrentUser); 
+                            //clsGlobal.RememberUsernameAndPassword(txtUsername.Text, txtPassword.Text);
                         }
                         else
                         {
                             txtUsername.Text = "";
                             txtPassword.Text = "";
-                            clsGlobal.RememberUsernameAndPassword("", "");
+                            FileLogger.Log(null);
+                            //clsGlobal.RememberUsernameAndPassword("", "");
                         }
 
                         Logger DatabaseLogger = new Logger(clsUser.SaveLogin);
 
-                        if (DatabaseLogger.Log(clsGlobal.CurrentUser.ID))
+                        if (DatabaseLogger.Log(clsGlobal.CurrentUser))
                         {
                             this.Hide();
                             FrmMainScreen Form = new FrmMainScreen(this);
