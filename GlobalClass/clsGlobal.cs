@@ -1,19 +1,32 @@
 ﻿using DVLD_Buissness;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Security;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace DVLD___Driving_Licenses_Managment
 {
+    public class Logger
+    {
+        public delegate bool LogAction (int loggedInUserID);
+        private LogAction _LogAction; 
+
+        public Logger(LogAction Action)
+        {
+            _LogAction = Action;
+        }
+
+        public bool Log(int loggedInUserID)
+        {
+            return _LogAction(loggedInUserID);
+        }
+    }
+
     internal class clsGlobal
     {
         public static clsUser CurrentUser;
-
+       
         //save the last username and password to a file 
         public static bool RememberUsernameAndPassword(string username, string password)
         {
@@ -41,8 +54,7 @@ namespace DVLD___Driving_Licenses_Managment
             }
             return false;
         }
-    
-
+   
         //get the stored username and password
         public static bool getStoredUsernameAndPassword(ref string Username, ref string Password)
         {
@@ -92,26 +104,22 @@ namespace DVLD___Driving_Licenses_Managment
 
             return regex.IsMatch(Number);
         }
-
-       public static bool ValidateFloat(string Number)
+        public static bool ValidateFloat(string Number)
         {
             var pattern = @"^[0-9]*(?:\.[0-9]*)?$";
             var regex = new Regex(pattern);
             return regex.IsMatch(Number);
         }
-
         public static bool isNumber(string Number)
         {
             return ValidateFloat(Number) || ValidateInteger(Number); 
         }
-
         public static bool ValidateEmail(string email)
         {
             var pattern = @"^[a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$";
             var regex = new Regex(pattern);
             return regex.IsMatch(email);
         }
-
         public static bool CreateFolderIfDoesNotExist(string FolderPath)
         {
             if (!Directory.Exists(FolderPath))
@@ -129,7 +137,6 @@ namespace DVLD___Driving_Licenses_Managment
             }
             return true;
         }
-
         public static string GenerateGUID()
         {
             return Guid.NewGuid().ToString();
@@ -141,7 +148,6 @@ namespace DVLD___Driving_Licenses_Managment
             return GenerateGUID() + extn;
 
         }
-
         public static bool CopyImageToProjectFolder(ref string SourceFile)
         {
             string DestinationFolder = @"C:\DVLD - Driving Licenses Managment-People-Images\"; 

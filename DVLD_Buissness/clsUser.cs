@@ -148,9 +148,9 @@ namespace DVLD_Buissness
             return DataSettings.Authintication(username, password); 
         }
 
-        public static bool SaveLogin(int UserID)
+        public static bool SaveLogin(int userID)
         {
-            return DataSettings.SaveLoginRecord(UserID);
+            return DataSettings.SaveLoginRecord(userID);
         }
 
     }

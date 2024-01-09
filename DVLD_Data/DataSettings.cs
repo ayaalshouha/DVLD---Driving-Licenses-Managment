@@ -155,6 +155,8 @@ namespace DVLD_Data
     {
         public static string ConnectionString = "server=.; database=DVLD_Database; user id=sa; password=sa123456;";
     
+
+        //select if user isActive or NOT.
         public static bool Authintication(string username, string password) 
         {
             bool isActive = false;
@@ -184,6 +186,7 @@ namespace DVLD_Data
             }
             return isActive;
         }
+
 
         public static bool SaveLoginRecord(int UserID)
         {

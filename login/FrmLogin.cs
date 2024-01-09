@@ -50,8 +50,9 @@ namespace DVLD___Driving_Licenses_Managment
                             clsGlobal.RememberUsernameAndPassword("", "");
                         }
 
+                        Logger DatabaseLogger = new Logger(clsUser.SaveLogin);
 
-                        if (clsUser.SaveLogin(clsGlobal.CurrentUser.ID))
+                        if (DatabaseLogger.Log(clsGlobal.CurrentUser.ID))
                         {
                             this.Hide();
                             FrmMainScreen Form = new FrmMainScreen(this);

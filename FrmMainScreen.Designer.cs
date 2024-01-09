@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.lblLoggedInUser = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.applicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.drivingLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newDrivingLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,6 +59,8 @@
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblLoggedInUser = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -82,33 +82,6 @@
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // lblLoggedInUser
-            // 
-            this.lblLoggedInUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLoggedInUser.AutoSize = true;
-            this.lblLoggedInUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblLoggedInUser.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoggedInUser.Location = new System.Drawing.Point(940, 675);
-            this.lblLoggedInUser.Name = "lblLoggedInUser";
-            this.lblLoggedInUser.Size = new System.Drawing.Size(169, 26);
-            this.lblLoggedInUser.TabIndex = 3;
-            this.lblLoggedInUser.Text = "LoggedIn User :  ";
-            this.lblLoggedInUser.Click += new System.EventHandler(this.lblLoggedInUser_Click);
-            this.lblLoggedInUser.MouseLeave += new System.EventHandler(this.lblLoggedInUser_MouseLeave);
-            this.lblLoggedInUser.MouseHover += new System.EventHandler(this.lblLoggedInUser_MouseHover);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.MainMenu_Wallpaper1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1234, 695);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
             // applicationsToolStripMenuItem
             // 
             this.applicationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -122,7 +95,7 @@
             this.applicationsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.applicationsToolStripMenuItem.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.reference;
             this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
-            this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(170, 34);
+            this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(170, 36);
             this.applicationsToolStripMenuItem.Text = "Applications";
             // 
             // drivingLicenseToolStripMenuItem
@@ -299,7 +272,7 @@
             this.managePeopleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.managePeopleToolStripMenuItem.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.group;
             this.managePeopleToolStripMenuItem.Name = "managePeopleToolStripMenuItem";
-            this.managePeopleToolStripMenuItem.Size = new System.Drawing.Size(125, 34);
+            this.managePeopleToolStripMenuItem.Size = new System.Drawing.Size(125, 36);
             this.managePeopleToolStripMenuItem.Text = " People";
             this.managePeopleToolStripMenuItem.Click += new System.EventHandler(this.managePeopleToolStripMenuItem_Click);
             // 
@@ -308,7 +281,7 @@
             this.manageUsersToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.manageUsersToolStripMenuItem.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.users;
             this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
-            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(106, 34);
+            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(106, 36);
             this.manageUsersToolStripMenuItem.Text = "Users";
             this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
             // 
@@ -317,7 +290,7 @@
             this.manageDriversToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.manageDriversToolStripMenuItem.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.driver;
             this.manageDriversToolStripMenuItem.Name = "manageDriversToolStripMenuItem";
-            this.manageDriversToolStripMenuItem.Size = new System.Drawing.Size(121, 34);
+            this.manageDriversToolStripMenuItem.Size = new System.Drawing.Size(121, 36);
             this.manageDriversToolStripMenuItem.Text = "Drivers";
             this.manageDriversToolStripMenuItem.Click += new System.EventHandler(this.accountSettingsToolStripMenuItem_Click);
             // 
@@ -331,7 +304,7 @@
             this.accountSettingsToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.accountSettingsToolStripMenuItem1.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.account_settings;
             this.accountSettingsToolStripMenuItem1.Name = "accountSettingsToolStripMenuItem1";
-            this.accountSettingsToolStripMenuItem1.Size = new System.Drawing.Size(214, 34);
+            this.accountSettingsToolStripMenuItem1.Size = new System.Drawing.Size(214, 36);
             this.accountSettingsToolStripMenuItem1.Text = "Account Settings";
             // 
             // currentUserInfoToolStripMenuItem
@@ -362,6 +335,33 @@
             this.signOutToolStripMenuItem.Size = new System.Drawing.Size(286, 38);
             this.signOutToolStripMenuItem.Text = "Sign out ";
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
+            // 
+            // lblLoggedInUser
+            // 
+            this.lblLoggedInUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblLoggedInUser.AutoSize = true;
+            this.lblLoggedInUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblLoggedInUser.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoggedInUser.Location = new System.Drawing.Point(940, 675);
+            this.lblLoggedInUser.Name = "lblLoggedInUser";
+            this.lblLoggedInUser.Size = new System.Drawing.Size(169, 26);
+            this.lblLoggedInUser.TabIndex = 3;
+            this.lblLoggedInUser.Text = "LoggedIn User :  ";
+            this.lblLoggedInUser.Click += new System.EventHandler(this.lblLoggedInUser_Click);
+            this.lblLoggedInUser.MouseLeave += new System.EventHandler(this.lblLoggedInUser_MouseLeave);
+            this.lblLoggedInUser.MouseHover += new System.EventHandler(this.lblLoggedInUser_MouseHover);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::DVLD___Driving_Licenses_Managment.Properties.Resources.MainMenu_Wallpaper1;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1234, 695);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmMainScreen
             // 
