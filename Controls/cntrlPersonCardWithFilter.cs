@@ -149,5 +149,10 @@ namespace DVLD___Driving_Licenses_Managment
 
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+        private void txtInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

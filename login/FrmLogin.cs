@@ -20,61 +20,49 @@ namespace DVLD___Driving_Licenses_Managment
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(txtPassword.Text) || string.IsNullOrWhiteSpace(txtUsername.Text))
+            lblNotes.Visible = false;
+
+            if (string.IsNullOrWhiteSpace(txtPassword.Text) || string.IsNullOrWhiteSpace(txtUsername.Text))
             {
                 lblNotes.Visible = true;
                 lblNotes.Text = "* Enter Username/password please..";
                 return; 
             }
 
-            lblNotes.Visible = false;
-
-            //check if exist 
-            if (clsUser.isExist(txtUsername.Text, txtPassword.Text))
-            {
-                //check if active 
-                if(clsUser.Authintication(txtUsername.Text, txtPassword.Text))
-                {
-                    clsGlobal.CurrentUser = clsUser.Find(txtUsername.Text);
-
-                    if(clsGlobal.CurrentUser != null)
-                    {
-                        Logger FileLogger = new Logger(clsGlobal.RememberUsernameAndPassword); 
-
-                        if (checkBox1.Checked)
-                        {
-                            FileLogger.Log(clsGlobal.CurrentUser); 
-                            //clsGlobal.RememberUsernameAndPassword(txtUsername.Text, txtPassword.Text);
-                        }
-                        else
-                        {
-                            txtUsername.Text = "";
-                            txtPassword.Text = "";
-                            FileLogger.Log(null);
-                            //clsGlobal.RememberUsernameAndPassword("", "");
-                        }
-
-                        Logger DatabaseLogger = new Logger(clsUser.SaveLogin);
-
-                        if (DatabaseLogger.Log(clsGlobal.CurrentUser))
-                        {
-                            this.Hide();
-                            FrmMainScreen Form = new FrmMainScreen(this);
-                            Form.ShowDialog();
-                        }
-                    }
-                }
-                else
-                {
-                    lblNotes.Visible = true;
-                    lblNotes.Text = "* User account is NOT active!";
-                }
-            }
-            else
+            if(!clsUser.isExist(txtUsername.Text, txtPassword.Text))
             {
                 lblNotes.Visible = true;
                 lblNotes.Text = "* Invalid username/password!";
                 return;
+            }
+
+            clsUser user = clsUser.Find(txtUsername.Text); 
+
+           if(!user.isActive)
+           {
+                lblNotes.Visible = true;
+                lblNotes.Text = "* User account is NOT active!";
+                return; 
+           }
+
+            clsGlobal.CurrentUser = user;
+
+            if (!checkBox1.Checked)
+            {
+                txtPassword.Text = "";
+                txtUsername.Text = "";
+            }
+
+            if (clsGlobal.SaveUsingRegistry(txtUsername.Text, txtPassword.Text))
+            {
+                Logger DatabaseLogger = new Logger(clsUser.SaveLogin);
+
+                if (DatabaseLogger.Log(clsGlobal.CurrentUser))
+                {
+                    this.Hide();
+                    FrmMainScreen Form = new FrmMainScreen(this);
+                    Form.ShowDialog();
+                }
             }
         }
 
@@ -83,7 +71,7 @@ namespace DVLD___Driving_Licenses_Managment
             txtUsername.Focus();
             string username ="", password = ""; 
 
-            if(clsGlobal.getStoredUsernameAndPassword(ref username, ref password))
+            if(clsGlobal.getUsernamePasswordUsingRegistry(ref username,ref password))
             {
                 txtUsername.Text = username;
                 txtPassword.Text = password;
