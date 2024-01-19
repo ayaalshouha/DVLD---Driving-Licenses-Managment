@@ -38,9 +38,10 @@ namespace DVLD_Data
                 }
                 reader.Close();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.WriteLine("Error: " + e.Message);
+                DataSettings.StoreUsingEventLogs(ex.Message.ToString());
+                //Console.WriteLine("Error: " + e.Message);
             }
             finally
             {
@@ -85,7 +86,8 @@ namespace DVLD_Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                DataSettings.StoreUsingEventLogs(ex.Message.ToString());
+                //Console.WriteLine("Error: " + ex.Message);
             }
             finally
             {
@@ -135,7 +137,8 @@ namespace DVLD_Data
 
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                DataSettings.StoreUsingEventLogs(ex.Message.ToString());
+                //Console.WriteLine("Error: " + ex.Message);
             }
             finally
             {
@@ -158,7 +161,8 @@ namespace DVLD_Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                DataSettings.StoreUsingEventLogs(ex.Message.ToString());
+                //Console.WriteLine("Error: " + ex.Message);
             }
             finally
             {
@@ -182,7 +186,8 @@ namespace DVLD_Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                DataSettings.StoreUsingEventLogs(ex.Message.ToString());
+                //Console.WriteLine("Error: " + ex.Message);
             }
             finally
             {
@@ -217,7 +222,8 @@ namespace DVLD_Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                DataSettings.StoreUsingEventLogs(ex.Message.ToString());
+                //Console.WriteLine("Error: " + ex.Message);
             }
             finally
             {
@@ -248,9 +254,10 @@ namespace DVLD_Data
                 }
                
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.WriteLine("Error: "+ e.Message);
+                DataSettings.StoreUsingEventLogs(ex.Message.ToString());
+                //Console.WriteLine("Error: "+ e.Message);
 
             }
             finally
@@ -286,10 +293,12 @@ namespace DVLD_Data
                     isFound = true;
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.WriteLine("Error: " +  e.Message);
+                DataSettings.StoreUsingEventLogs(ex.Message.ToString());
+                //Console.WriteLine("Error: " +  e.Message);
             }
+
             finally
             {
                 Connection.Close(); 

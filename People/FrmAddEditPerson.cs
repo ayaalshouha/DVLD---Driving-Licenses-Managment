@@ -18,7 +18,7 @@ namespace DVLD___Driving_Licenses_Managment
 
         private enum enMode { add, update }
         private enMode mode = enMode.add;
-        private clsPerson _Person; 
+        private clsPerson _Person;
         private int _PersonID = -1;
         public FrmAddEditPerson(int ID = -1)
         {
@@ -55,7 +55,7 @@ namespace DVLD___Driving_Licenses_Managment
                 if (_Person.PersonalPicture != "")
                 {
                     pbDefaultPicture.ImageLocation = _Person.PersonalPicture;
-                    llRemoveImage.Visible = true; 
+                    llRemoveImage.Visible = true;
                 }
             }
         }
@@ -74,7 +74,7 @@ namespace DVLD___Driving_Licenses_Managment
         private void _SetDefaultData()
         {
             //set default image 
-            if(mode == enMode.add)
+            if (mode == enMode.add)
             {
                 rdMale.Checked = true;
                 pbDefaultPicture.Image = Resources.user__2_;
@@ -126,7 +126,7 @@ namespace DVLD___Driving_Licenses_Managment
 
 
 
-            if(pbDefaultPicture.ImageLocation != null)
+            if (pbDefaultPicture.ImageLocation != null)
                 _Person.PersonalPicture = pbDefaultPicture.ImageLocation;
             else
                 _Person.PersonalPicture = "";
@@ -141,9 +141,9 @@ namespace DVLD___Driving_Licenses_Managment
 
             if (mode == enMode.update)
             {
-                _Person = clsPerson.Find(_PersonID); 
+                _Person = clsPerson.Find(_PersonID);
 
-                if(_Person != null)
+                if (_Person != null)
                 {
                     lblHeader.Text = "Update Person";
                     lblID.Text = _PersonID.ToString();
@@ -159,11 +159,12 @@ namespace DVLD___Driving_Licenses_Managment
 
         private bool _HandleImage()
         {
+            
             //check if the current image in picture box is the same as person image
             //if not the same then delete the previous image 
-            if(pbDefaultPicture.ImageLocation != _Person.PersonalPicture)
+            if (pbDefaultPicture.ImageLocation != _Person.PersonalPicture)
             {
-                if(_Person.PersonalPicture != "")
+                if (_Person.PersonalPicture != "")
                 {
                     File.Delete(_Person.PersonalPicture);
                     _Person.PersonalPicture = "";
@@ -171,10 +172,10 @@ namespace DVLD___Driving_Licenses_Managment
             }
 
             //the copying image procedure 
-            if(pbDefaultPicture.ImageLocation != null)
+            if (pbDefaultPicture.ImageLocation != null)
             {
                 string SourceFile = pbDefaultPicture.ImageLocation.ToString();
-                if(clsGlobal.CopyImageToProjectFolder(ref SourceFile))
+                if (clsGlobal.CopyImageToProjectFolder(ref SourceFile))
                 {
                     _Person.PersonalPicture = SourceFile;
                     return true;
@@ -185,7 +186,7 @@ namespace DVLD___Driving_Licenses_Managment
                     return false;
                 }
             }
-            return false; 
+            return true;
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -201,8 +202,6 @@ namespace DVLD___Driving_Licenses_Managment
 
             AssignDataToPersonObject();
 
-           
-
             if (_Person.Save())
             {
                 _PersonID = _Person.ID;
@@ -211,12 +210,12 @@ namespace DVLD___Driving_Licenses_Managment
                 lblID.Text = _PersonID.ToString();
                 MessageBox.Show("Person saved Successfully", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                if(_PersonID != -1)
+                if (_PersonID != -1)
                 {
                     // Trigger the event to send data back to the caller form.
                     DataBack?.Invoke(this, _Person.ID);
                 }
-                
+
             }
             else
                 MessageBox.Show("Something went wrong! please try again!", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -235,7 +234,7 @@ namespace DVLD___Driving_Licenses_Managment
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtNationalNo, "National no. must be a 10-digits number!");
-                return; 
+                return;
 
             }
             else
@@ -252,7 +251,7 @@ namespace DVLD___Driving_Licenses_Managment
             else
                 errorProvider1.SetError(txtNationalNo, null);
 
-            if(mode == enMode.add)
+            if (mode == enMode.add)
             {
                 if (clsPerson.isExist(txtNationalNo.Text))
                 {
@@ -292,7 +291,7 @@ namespace DVLD___Driving_Licenses_Managment
                 pbDefaultPicture.Load(ImagePath);
                 llRemoveImage.Visible = true;
             }
-        }      
+        }
 
         private void ValidateEmptyTextBox(object sender, CancelEventArgs e)
         {
@@ -337,7 +336,8 @@ namespace DVLD___Driving_Licenses_Managment
             else
                 pbDefaultPicture.Image = Resources.user__2_;
 
-            llRemoveImage.Visible = false; 
+            llRemoveImage.Visible = false;
         }
+
     }
 }

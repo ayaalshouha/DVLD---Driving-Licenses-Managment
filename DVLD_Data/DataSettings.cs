@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace DVLD_Data
 {
@@ -11,8 +11,6 @@ namespace DVLD_Data
         NewLocalDL = 1, RenewDL = 2, LostReplacement = 3,
         DamagedReplacement = 4, ReleaseDetainedDL = 5, NewInternationalDL = 6, RetakeTest = 7
     }
-
-
     public struct stPerson
     {
         public int ID { get; set; }
@@ -33,7 +31,6 @@ namespace DVLD_Data
         public int UpdatedByUserID { get; set; }
         public DateTime UpdatedDate { get; set; }
     }
-
     public struct stUser
     {
         public int ID { get; set; }
@@ -42,7 +39,6 @@ namespace DVLD_Data
         public bool isActive { get; set; }
         public int PersonID { get; set; }
     }
-
     public struct stDriver
     {
         public int ID { get; set; }
@@ -50,7 +46,6 @@ namespace DVLD_Data
         public DateTime CreationDate  { get; set; }
         public int CreatedByUserID { get; set; }
     }
-
     public struct stLicenses
     {
         public int ID { get; set; }
@@ -65,7 +60,6 @@ namespace DVLD_Data
         public string Notes { get; set; }
         public int CreatedByUserID { get; set; }
     }
-
     public struct stApplication
     {
         public int ID { get; set; }
@@ -89,7 +83,6 @@ namespace DVLD_Data
         public int ReleasedByUserID { get; set; }
         public int CreatedByUserID { get; set; }
     }
-
     public struct Types
     {
         public int ID { get; set; }
@@ -97,7 +90,6 @@ namespace DVLD_Data
         public decimal Fees { get; set; }
         public string Description { get; set; }
     }
-
     public struct stLocalDrivingLicensesApplication
     {
         public int ID { get; set; }
@@ -105,7 +97,6 @@ namespace DVLD_Data
         public int LicenseClassID { get; set; }
 
     }
-
     public struct stInternationalLicenses
     {
         public int ID { get; set; }
@@ -117,7 +108,6 @@ namespace DVLD_Data
         public bool isActive { get; set;}
         public int CreatedByUserID { get; set;}
     }
-
     public struct stAppointment
     {
         public int ID { get; set; }
@@ -130,7 +120,6 @@ namespace DVLD_Data
         public int RetakeTestID { get; set; }
 
     }
-
     public struct stTests
     {
         public int ID { get; set; }
@@ -140,7 +129,6 @@ namespace DVLD_Data
         public int CreatedByUserID { get; set; }
 
     }
-
     public struct stLicenseClass
     {
         public int ID { get; set; }
@@ -150,11 +138,20 @@ namespace DVLD_Data
         public byte MinAgeAllowed { get; set; }
         public byte ValidityYears { get; set;}
     }
-
     public static class DataSettings
     {
         public static string ConnectionString = "server=.; database=DVLD_Database; user id=sa; password=sa123456;";
-    
+
+        public static void StoreUsingEventLogs(string message)
+        {
+            string sourceName = "DVLD_App";
+
+            if (!EventLog.SourceExists(sourceName))
+                EventLog.CreateEventSource(sourceName, "Application");
+
+                EventLog.WriteEntry(sourceName, message, EventLogEntryType.Error);
+        }
+
 
         //select if user isActive or NOT.
         public static bool Authintication(string username, string password) 

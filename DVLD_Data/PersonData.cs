@@ -48,7 +48,7 @@ namespace DVLD_Data
 
             catch(Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                DataSettings.StoreUsingEventLogs(ex.Message.ToString());
             }
             finally
             {
@@ -94,7 +94,7 @@ namespace DVLD_Data
 
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                DataSettings.StoreUsingEventLogs(ex.Message.ToString());
             }
             finally
             {
@@ -162,7 +162,7 @@ namespace DVLD_Data
 
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                DataSettings.StoreUsingEventLogs(ex.Message.ToString());
             }
             finally
             {
@@ -239,7 +239,7 @@ namespace DVLD_Data
 
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                DataSettings.StoreUsingEventLogs(ex.Message.ToString());
             }
             finally
             {
@@ -249,7 +249,7 @@ namespace DVLD_Data
             return RowAffected > 0;
         }
 
-        public static bool Delete(int PersonID)
+        public static bool Delete(int PersonID) 
         {
             int RowAffected = 0; 
             SqlConnection Connection = new SqlConnection(DataSettings.ConnectionString);
@@ -263,7 +263,7 @@ namespace DVLD_Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                DataSettings.StoreUsingEventLogs(ex.Message.ToString());
             }
             finally
             {
@@ -286,7 +286,7 @@ namespace DVLD_Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                DataSettings.StoreUsingEventLogs(ex.Message.ToString());
             }
             finally
             {
@@ -310,7 +310,8 @@ namespace DVLD_Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                DataSettings.StoreUsingEventLogs(ex.Message.ToString());
+                //Console.WriteLine("Error: " + ex.Message);
             }
             finally
             {
@@ -334,7 +335,7 @@ namespace DVLD_Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                DataSettings.StoreUsingEventLogs(ex.Message.ToString());
             }
             finally
             {
@@ -362,7 +363,7 @@ namespace DVLD_Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                DataSettings.StoreUsingEventLogs(ex.Message.ToString());
             }
             finally
             {
