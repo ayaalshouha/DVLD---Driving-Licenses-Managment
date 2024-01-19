@@ -29,7 +29,7 @@ namespace DVLD___Driving_Licenses_Managment
 
         public static clsUser CurrentUser;
 
-        public static string KeyPath = @"HKEY_CURRENT_USER\SOFTWARE\EmployeeSystemConfig";
+        public static string KeyPath = @"HKEY_CURRENT_USER\SOFTWARE\DVLD_config";
         public static string UsernameValueName = "username";
         public static string PasswordValueName = "password";
         public static string UsernameValueData = string.Empty;
