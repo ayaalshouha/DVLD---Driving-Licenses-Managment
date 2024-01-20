@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Configuration; 
 
 namespace DVLD_Data
 {
@@ -140,7 +141,9 @@ namespace DVLD_Data
     }
     public static class DataSettings
     {
-        public static string ConnectionString = "server=.; database=DVLD_Database; user id=sa; password=sa123456;";
+        public static string ConnectionString = ConfigurationManager.AppSettings["ConnectionString"]; 
+            
+            //"server=.; database=DVLD_Database; user id=sa; password=sa123456;";
 
         public static void StoreUsingEventLogs(string message)
         {

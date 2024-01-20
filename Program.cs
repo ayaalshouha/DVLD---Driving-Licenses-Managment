@@ -14,7 +14,6 @@ namespace DVLD___Driving_Licenses_Managment
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmLogin());
-            //Application.Run(new FormTest());
         }
     }
 }
