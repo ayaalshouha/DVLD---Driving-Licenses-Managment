@@ -29,7 +29,9 @@ namespace DVLD___Driving_Licenses_Managment
                 return; 
             }
 
-            if(!clsUser.isExist(txtUsername.Text, txtPassword.Text))
+            string hashedPassword = clsGlobal.ComputeHash(txtPassword.Text); 
+
+            if (!clsUser.isExist(txtUsername.Text, hashedPassword))
             {
                 lblNotes.Visible = true;
                 lblNotes.Text = "* Invalid username/password!";
@@ -74,7 +76,7 @@ namespace DVLD___Driving_Licenses_Managment
             if(clsGlobal.getUsernamePasswordUsingRegistry(ref username,ref password))
             {
                 txtUsername.Text = username;
-                txtPassword.Text = password;
+                txtPassword.Text = new string('*', password.Length);
                 checkBox1.Checked = true; 
             }
             else

@@ -36,10 +36,11 @@ namespace DVLD___Driving_Licenses_Managment
                 return;
             }
 
+            txtCurrent.Text = clsGlobal.ComputeHash(txtCurrent.Text);
             if(txtCurrent.Text != _User.password)
             {
                 label1.Visible = true;
-                label1.Text = "The current password you entered does NOT match our records.";
+                label1.Text = $"_User.password = {_User.password} The current password you entered does NOT match our records.";
                 return;
             }
 
@@ -49,14 +50,17 @@ namespace DVLD___Driving_Licenses_Managment
                 label1.Text = "The new password you entered does NOT match the confirmation password.";
                 return;
             }
-
-            _User.password = txtCurrent.Text;
+            txtNew.Text = clsGlobal.ComputeHash(txtNew.Text);
+            _User.password = txtNew.Text;
 
             if(_User.Save())
             {
                 MessageBox.Show("Password updatted successfully.", "Message Box",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                txtCurrent.Text = string.Empty;
+                txtNew.Text = string.Empty; 
+                txtCheck.Text = string.Empty;
                 label1.Visible = false;
                 label1.Text = string.Empty; 
             }

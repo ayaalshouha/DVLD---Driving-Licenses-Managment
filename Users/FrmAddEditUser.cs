@@ -35,7 +35,7 @@ namespace DVLD___Driving_Licenses_Managment
         private void AssignData()
         {
             _User.username = txtUsername.Text;
-            _User.password = txtPassword.Text;
+            _User.password = clsGlobal.ComputeHash(txtPassword.Text);
             _User.isActive = chkIsActive.Checked ? true : false;
             _User.PersonID = cntrPersonCard1.ID;
         }
