@@ -12,6 +12,8 @@ namespace DVLD___Driving_Licenses_Managment
         public FrmLogin()
         {
             InitializeComponent();
+            txtPassword.PasswordChar = '*';
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -71,12 +73,13 @@ namespace DVLD___Driving_Licenses_Managment
         private void Form1_Load(object sender, EventArgs e)
         {
             txtUsername.Focus();
+            
             string username ="", password = ""; 
 
             if(clsGlobal.getUsernamePasswordUsingRegistry(ref username,ref password))
             {
                 txtUsername.Text = username;
-                txtPassword.Text = new string('*', password.Length);
+                txtPassword.Text = password;
                 checkBox1.Checked = true; 
             }
             else
