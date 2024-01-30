@@ -305,6 +305,7 @@ namespace DVLD___Driving_Licenses_Managment
             else
                 errorProvider1.SetError(Temp, null);
         }
+
         private void txtPhone_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(txtPhone.Text))
