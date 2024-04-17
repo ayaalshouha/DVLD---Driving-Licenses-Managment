@@ -57,10 +57,6 @@ Here are some screenshots from the application:
 
 <img width="960" alt="ContextMenuStrip options" src="https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment/assets/129595827/58d7c07d-552a-4662-ba5c-b017a8e88adf">
 
-**Services** 
-
-<img width="960" alt="Services" src="https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment/assets/129595827/1c71d0d6-b247-4b95-9afc-c072c823ce7a">
-
 **Driver Licenses History** 
 
 <img width="960" alt="Driver licenses history" src="https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment/assets/129595827/d6ad5aaa-1d29-4cb0-a7c2-0db58e27c39f">
@@ -96,7 +92,7 @@ Here are some screenshots from the application:
 
 **Current Account Setting** 
 
-<img width="960" alt="current account setting" src="https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment/assets/129595827/b32de159-9efd-4d10-81c5-e4f94aea7905">
+<img width="960" alt="currentAccountSettings" src="https://github.com/ayaalshouha/DVLD-driving-and-vehicles-licenses-development/assets/129595827/eae9d031-4f0b-4d14-82f6-abc7750c98dd">
 
 **Updating Password** 
 
