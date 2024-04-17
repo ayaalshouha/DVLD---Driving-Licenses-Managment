@@ -35,7 +35,7 @@ Here are some screenshots from the application:
 
 **login**
 
-<img width="506" alt="login" src="https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment/assets/129595827/f153b6ab-3831-4014-859e-d62dc986ea89">
+<img width="515" alt="login" src="https://github.com/ayaalshouha/DVLD-driving-and-vehicles-licenses-development/assets/129595827/05df2331-6a18-4639-8fde-e4a35ce28104">
 
 **Invalid login** 
 
@@ -43,7 +43,7 @@ Here are some screenshots from the application:
 
 **Main Menu** 
 
-<img width="521" alt="main menu" src="https://github.com/ayaalshouha/DVLD---Driving-Licenses-Managment/assets/129595827/9130ec62-4cc9-4d06-924e-722b303ce7b2">
+<img width="948" alt="mainmenu" src="https://github.com/ayaalshouha/DVLD-driving-and-vehicles-licenses-development/assets/129595827/eaadd092-ce01-494a-9ea8-46e036afc3f5">
 
 **Input Validation** 
 
